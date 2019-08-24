@@ -4,7 +4,14 @@ import Vuex from "vuex";
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-  state: {},
+  state: {
+    todos: []
+  },
   mutations: {},
-  actions: {}
+  actions: {},
+  getters: {
+    getTodoById: state => id => {
+      return state.todos.find(todo => todo.id === id);
+    }
+  }
 });
